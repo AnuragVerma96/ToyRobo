@@ -36,21 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-/* Demo Start Here */
-
-.robo {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: blue;
-  transform-origin: center;
-  border-top: 5px solid black;
-}
-
-.table {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  border: 1px dotted black;
-}

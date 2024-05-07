@@ -136,12 +136,12 @@ function App() {
       {isReporting &&
         `Current Position: (${position.x},${position.y}); Facing: ${position.direction}`}
       <div id="tabletop">
-        {[Array(5)].map((ycord, yidx) => (
-          <div key={yidx}>
+        {[Array(5)].map((elY, yCord) => (
+          <div key={yCord}>
             {[
-              Array(5).map((xcord, xidx) => (
-                <div key={xidx}>
-                  {position.x === xidx && position.y === 4 - yidx && (
+              Array(5).map((elX, xCord) => (
+                <div key={xCord}>
+                  {position.x === xCord && position.y === 4 - yCord && (
                     <div className={`robot-${position.facing}`}></div>
                   )}
                 </div>
