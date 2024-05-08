@@ -36,3 +36,85 @@
     transform: rotate(360deg);
   }
 }
+/* Demo Robo */
+
+.tabletop {
+  border: 1px solid black;
+}
+
+/*  */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
+
+.box {
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yellowBox {
+  background-color: yellow;
+}
+.redBox {
+  background-color: red;
+}
+
+.activeGrid {
+  background-color: green;
+}
+.activeDiagonal {
+  background: blue;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid blue; /* Change 'blue' to your desired color */
+}
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.triangle-North {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid blue; /* Change 'blue' to your desired color */
+}
+
+.triangle-South {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 30px solid blue; /* Change 'blue' to your desired color */
+}
+
+.triangle-East {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 30px solid blue; /* Change 'blue' to your desired color */
+}
+
+.triangle-West {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 30px solid blue; /* Change 'blue' to your desired color */
+}

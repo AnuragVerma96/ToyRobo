@@ -1,7 +1,15 @@
 import { useState } from "react";
 import "./App.css";
+import RoboSimulator from "./components/RoboSimulator";
+import InputInterface from "./components/InputInterface";
 
 function App() {
+  const test = [
+    {
+      0: 4,
+      North: "0deg",
+    },
+  ];
   const [position, setPosition] = useState({
     x: null,
     y: null,
@@ -20,14 +28,10 @@ function App() {
   };
   const place = (x, y, f) => {
     if (isReporting) setIsReporting(false);
-    console.log("t0");
-    debugger;
     if (!x && !y && !f) {
-      console.log("t1");
-      setPosition({ x: 0, y: 0, direction: getRandomDirection() });
+      setPosition({ x: 0, y: 4 - 0, direction: getRandomDirection() });
     } else {
-      console.log("t2");
-      setPosition({ x, y, direction: f });
+      setPosition({ x, y: 4 - y, direction: f });
     }
   };
   const move = () => {
@@ -40,10 +44,10 @@ function App() {
 
     switch (direction) {
       case "North":
-        newY = y + 1;
+        newY = y - 1;
         break;
       case "South":
-        newY = y - 1;
+        newY = y + 1;
         break;
       case "East":
         newX = x + 1;
@@ -106,50 +110,25 @@ function App() {
     <div className="App">
       <h1>Toy Robo Demo</h1>
       <h3>
-        Forced Render Cords: ({position?.x},{position?.y}); Direction:{" "}
-        {position?.direction}
+        Forced Render Cords: ({position?.x},{position.y ? 4 - position.y : ""});
+        Direction: {position?.direction}
       </h3>
-      <div>
-        <button onClick={() => place()}>PLACE</button>
-        <button onClick={move}>MOVE</button>
-        <button onClick={left}>LEFT</button>
-        <button onClick={right}>RIGHT</button>
-        <button
-          onClick={() => {
-            if (position?.direction) setIsReporting(true);
-          }}
-        >
-          REPORT
-        </button>
-        <button
-          onClick={() => {
-            if (isReporting) setIsReporting(false);
-            setPosition({ x: null, y: null, direction: null });
-          }}
-        >
-          RESET
-        </button>
-        <button onClick={() => place(0, 0, "North")}>
-          TEST CASE (0,0, North)
-        </button>
-      </div>
+      <InputInterface
+        position={position}
+        isReporting={isReporting}
+        setIsReporting={setIsReporting}
+        setPosition={setPosition}
+        place={place}
+        move={move}
+        left={left}
+        right={right}
+      />
+
       {isReporting &&
-        `Current Position: (${position.x},${position.y}); Facing: ${position.direction}`}
-      <div id="tabletop">
-        {[Array(5)].map((elY, yCord) => (
-          <div key={yCord}>
-            {[
-              Array(5).map((elX, xCord) => (
-                <div key={xCord}>
-                  {position.x === xCord && position.y === 4 - yCord && (
-                    <div className={`robot-${position.facing}`}></div>
-                  )}
-                </div>
-              )),
-            ]}
-          </div>
-        ))}
-      </div>
+        `Current Position: (${position.x},${
+          position.y ? 4 - position.y : ""
+        }); Facing: ${position.direction}`}
+      <RoboSimulator position={position} />
     </div>
   );
 }
