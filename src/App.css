@@ -68,20 +68,12 @@
   background-color: red;
 }
 
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid blue; 
-}
-
 .triangle-North {
   width: 0;
   height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-bottom: 30px solid blue; 
+  border-bottom: 30px solid blue;
 }
 
 .triangle-South {
@@ -89,7 +81,7 @@
   height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 30px solid blue; 
+  border-top: 30px solid blue;
 }
 
 .triangle-East {
@@ -97,7 +89,7 @@
   height: 0;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
-  border-left: 30px solid blue; 
+  border-left: 30px solid blue;
 }
 
 .triangle-West {
@@ -105,5 +97,5 @@
   height: 0;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
-  border-right: 30px solid blue; 
+  border-right: 30px solid blue;
 }

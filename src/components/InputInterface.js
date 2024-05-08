@@ -12,7 +12,30 @@ const InputInterface = ({
 }) => {
   return (
     <div>
-      <button onClick={() => place()}>PLACE</button>
+      <select name="xCord" id="xCord">
+        <option value={0}>0</option>
+        <option value={1}>1</option>
+        <option value={2}>2</option>
+        <option value={3}>3</option>
+        <option value={4}>4</option>
+      </select>
+      <select name="yCord" id="yCord">
+        <option value={0}>0</option>
+        <option value={1}>1</option>
+        <option value={2}>2</option>
+        <option value={3}>3</option>
+        <option value={4}>4</option>
+      </select>
+      <button
+        onClick={() =>
+          place(
+            Number(document.getElementById("xCord").value),
+            Number(document.getElementById("yCord").value)
+          )
+        }
+      >
+        PLACE
+      </button>
       <button onClick={move}>MOVE</button>
       <button onClick={left}>LEFT</button>
       <button onClick={right}>RIGHT</button>

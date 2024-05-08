@@ -15,8 +15,9 @@ const RoboSimulator = ({ position }) => {
                       ? "redBox"
                       : "yellowBox"
                   }`}
-                  key={_ + "col" + colIdx}
+                  key={rowIdx + colIdx}
                 >
+                  {console.log(position)}
                   {position.x === rowIdx && position.y === colIdx ? (
                     <div className={`triangle-${position.direction}`}></div>
                   ) : (
