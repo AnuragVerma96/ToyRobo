@@ -4,12 +4,6 @@ import RoboSimulator from "./components/RoboSimulator";
 import InputInterface from "./components/InputInterface";
 
 function App() {
-  const test = [
-    {
-      0: 4,
-      North: "0deg",
-    },
-  ];
   const [position, setPosition] = useState({
     x: null,
     y: null,
