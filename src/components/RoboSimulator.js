@@ -17,7 +17,6 @@ const RoboSimulator = ({ position }) => {
                   }`}
                   key={rowIdx + colIdx}
                 >
-                  {console.log(position)}
                   {position.x === rowIdx && position.y === colIdx ? (
                     <div className={`triangle-${position.direction}`}></div>
                   ) : (
